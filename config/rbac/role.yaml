@@ -1,15 +1,58 @@
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  labels:
-    app.kubernetes.io/name: clusterrole
-    app.kubernetes.io/instance: manager-role
-    app.kubernetes.io/component: rbac
-    app.kubernetes.io/created-by: platform-controller
-    app.kubernetes.io/part-of: platform-controller
-    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - platform.rubyrainbows.com
+  resources:
+  - downstreamranchers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - platform.rubyrainbows.com
+  resources:
+  - downstreamranchers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - platform.rubyrainbows.com
+  resources:
+  - downstreamranchers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - platform.rubyrainbows.com
+  resources:
+  - upstreamranchers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - platform.rubyrainbows.com
+  resources:
+  - upstreamranchers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - platform.rubyrainbows.com
+  resources:
+  - upstreamranchers/status
+  verbs:
+  - get
+  - patch
+  - update
