@@ -1,0 +1,16 @@
+apiVersion: platform.rubyrainbows.com/v1alpha1
+kind: UpstreamRancher
+metadata:
+  labels:
+    app.kubernetes.io/name: upstream-rancher
+    app.kubernetes.io/instance: upstream-rancher-sample
+    app.kubernetes.io/part-of: platform-controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: platform-controller
+  name: upstream-rancher-sample
+spec:
+  kubeConfig:
+    valueFrom:
+      secretKeyRef:
+        name: op-aws-eu-1-dev-credentials
+        key: kubeconfig

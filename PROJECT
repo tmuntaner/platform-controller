@@ -7,4 +7,23 @@ layout:
 - go.kubebuilder.io/v4
 projectName: platform-controller
 repo: tmuntaner/platform-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: rubyrainbows.com
+  group: platform
+  kind: UpsreamRancher
+  path: tmuntaner/platform-controller/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: rubyrainbows.com
+  group: platform
+  kind: DownstreamRancher
+  path: tmuntaner/platform-controller/api/v1alpha1
+  version: v1alpha1
 version: "3"
