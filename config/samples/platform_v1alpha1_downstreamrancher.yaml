@@ -1,0 +1,12 @@
+apiVersion: platform.rubyrainbows.com/v1alpha1
+kind: DownstreamRancher
+metadata:
+  labels:
+    app.kubernetes.io/name: downstream-rancher
+    app.kubernetes.io/instance: downstreamrancher-sample
+    app.kubernetes.io/part-of: platform-controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: platform-controller
+  name: downstream-rancher-sample
+spec:
+  upstreamRancher: upstream-rancher-sample

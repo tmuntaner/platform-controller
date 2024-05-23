@@ -1,0 +1,5 @@
+## Append samples of your project ##
+resources:
+- platform_v1alpha1_aws.yaml
+- platform_v1alpha1_downstreamrancher.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
